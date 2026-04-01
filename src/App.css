@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  
+  --color-background: #0B0D10;
+  --color-foreground: #EAE7DF;
+  --color-card: #161A20;
+  --color-card-foreground: #EAE7DF;
+  --color-popover: #161A20;
+  --color-popover-foreground: #EAE7DF;
+  --color-primary: #8B6B3E;
+  --color-primary-foreground: #0B0D10;
+  --color-secondary: #161A20;
+  --color-secondary-foreground: #EAE7DF;
+  --color-muted: #161A20;
+  --color-muted-foreground: #8B6B3E;
+  --color-accent: #5A1F1F;
+  --color-accent-foreground: #EAE7DF;
+  --color-destructive: #5A1F1F;
+  --color-border: #8B6B3E;
+  --color-input: #161A20;
+  --color-ring: #8B6B3E;
+}
+
+:root {
+  --background: #0B0D10;
+  --foreground: #EAE7DF;
+  --card: #161A20;
+  --card-foreground: #EAE7DF;
+  --primary: #8B6B3E;
+  --primary-foreground: #0B0D10;
+  --secondary: #161A20;
+  --secondary-foreground: #EAE7DF;
+  --muted: #161A20;
+  --muted-foreground: #8B6B3E;
+  --accent: #5A1F1F;
+  --accent-foreground: #EAE7DF;
+  --border: #8B6B3E;
+  --input: #161A20;
+  --ring: #8B6B3E;
+}
+
+@layer base {
+  * {
+    @apply border-border/20 outline-ring/50;
+    border-radius: 0 !important; /* Force hard edges */
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    @apply font-light tracking-tight;
+  }
+}
+
+/* Sovereign Authority Custom Styles */
+.sovereign-heading {
+  font-family: 'Cormorant Garamond', serif;
+  @apply text-primary font-light tracking-widest uppercase;
+}
+
+.sovereign-border {
+  border: 1px solid rgba(139, 107, 62, 0.3);
+}
+
+.sovereign-button {
+  @apply bg-transparent border border-primary text-primary px-8 py-3 transition-all duration-500 uppercase tracking-widest text-xs font-bold;
+}
+
+.sovereign-button:hover {
+  @apply bg-primary text-background;
+}
+
+.sovereign-card {
+  @apply bg-card border border-primary/10 p-8 transition-all duration-700;
+}
+
+.sovereign-card:hover {
+  @apply border-primary/40;
+}
+
+.sovereign-text-muted {
+  @apply text-foreground/60;
+}
+
+/* Typography Overrides */
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Section Rhythm */
+.section-dark {
+  @apply bg-[#0B0D10];
+}
+
+.section-graphite {
+  @apply bg-[#161A20];
+}
+
+/* Macro Visual Container */
+.macro-visual {
+  @apply relative overflow-hidden border border-primary/20 grayscale hover:grayscale-0 transition-all duration-1000;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0D10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B6B3E;
+}
+
+/* Admission Style Pricing */
+.admission-card {
+  @apply border-l-2 border-primary pl-6 py-4;
+}
+
+/* Remove Retail Clichés */
+.no-retail {
+  @apply grayscale opacity-80;
+}
